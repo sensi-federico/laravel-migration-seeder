@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('train', function (Blueprint $table) {
+        Schema::create('trains', function (Blueprint $table) {
             $table->id();
             $table->string('azienda', 70);
             $table->string('stazione_di_partenza');
             $table->string('stazione_di_arrivo');
             $table->string('orario_di_partenza', 10);
             $table->string('orario_di_arrivo', 10);
-            $table->int('codice_treno');
-            $table->int('numero_carrozze')->nullable();
+            $table->integer('codice_treno');
+            $table->integer('numero_carrozze')->nullable();
             $table->boolean('in_orario')->default(1);
             $table->boolean('cancellato')->default(0);
             $table->timestamps();
@@ -45,6 +45,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('train');
+        Schema::dropIfExists('trains');
     }
 };

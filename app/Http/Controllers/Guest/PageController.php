@@ -16,8 +16,8 @@ class PageController extends Controller
     public function trains()
     {
         $trains = Train::all();
-        dd($trains);
+        // dd($trains);
 
-        return view('welcome');
+        return view('welcome', compact('trains'));
     }
 }
