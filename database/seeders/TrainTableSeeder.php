@@ -19,12 +19,12 @@ class TrainTableSeeder extends Seeder
         for ($i = 0; $i < 5; $i++) {
 
             $train = new Train();
-            $train->azienda = $faker->word();
-            $train->stazione_di_partenza = $faker->word();
-            $train->stazione_di_arrivo = $faker->word();
+            $train->azienda = $faker->company();
+            $train->stazione_di_partenza = $faker->city();
+            $train->stazione_di_arrivo = $faker->city();
             $train->orario_di_partenza = $faker->time();
             $train->orario_di_arrivo = $faker->time();
-            $train->codice_treno = $faker->randomNumber(2, false);
+            $train->codice_treno = $faker->randomNumber(2);
             $train->in_orario = $faker->randomElement([true, false]);
 
             if ($train->in_orario == true) {
